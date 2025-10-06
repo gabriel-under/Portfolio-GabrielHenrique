@@ -14,7 +14,7 @@
     --corFundoWelcome: #17222F;
     /* -----Header and Main First---------*/
      --corDoTextoResto: #000000;
-    --backgroundAboutMe: #cacafb;
+    --backgroundAboutMe: #e7e7ff;
 }
 body.darkmode{
 
@@ -90,7 +90,7 @@ body{
 #botao{
     position: absolute;
     cursor: pointer;
-    width: 27px;
+    width: 34px;
     opacity: 0;
     height: 38px;
     border: 1px solid black;
@@ -99,10 +99,16 @@ body{
 a>#icongithub{
     display: flex;
     align-items: center;
-    height: auto;
+    
     height: 4vh;
     border-radius: 5px;  
     margin-bottom: 0;
+}
+#iconsol{
+height: 4vh;
+border-radius: 5px;
+margin-bottom: 0;
+margin-left: 5%;
 }
 
 .botaoportfolio{
@@ -200,7 +206,19 @@ a>#icongithub{
     display: flex;
     text-align: center;
 }
-
+.information-about-me>h1{
+    color: var(--corDoTextoResto);
+    margin-top: 2rem;
+    font-size: 23px;
+}
+#eu2{
+    max-width: 50%;
+    height: 30vh;
+    border-radius: 5px;
+   margin-top: 2rem;
+  object-fit: cover;
+  
+}
 
 @media (max-width:700px){
     .box-me{
@@ -211,12 +229,12 @@ a>#icongithub{
         
 
     }
-    .welcome{
+    .plano-de-fundo-welcome{
         flex-direction: column;
     }
     #eu1{
         margin-top: 0;
-        width: 40%;
+        width: 30%;
         height: 12vh;
         
         
