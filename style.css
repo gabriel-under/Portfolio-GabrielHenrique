@@ -6,6 +6,7 @@
     text-decoration: none;
     box-sizing: border-box;
      transition: background-color 1s, color 0.1s;
+     text-decoration: none;
 }
 :root{
     --backgroundDoSite: #FFFFFF;
@@ -258,7 +259,7 @@ margin-left: 5%;
 display: flex;
 flex-direction: column;
 width: 30%;
-height: 35vh;
+height: 32vh;
 margin-left: 1%;
 padding: 10px;
  border-radius: 5px;
@@ -280,7 +281,7 @@ display: flex;
 flex-direction: column;
 flex-direction: column;
 width: 30%;
-height: 35vh;
+height: 32vh;
 margin-left: 5%;
 border-radius: 5px;
 padding: 10px;
@@ -303,7 +304,7 @@ display: flex;
 flex-direction: column;
 flex-direction: column;
 width: 30%;
-height: 35vh;
+height: 32vh;
 margin-left: 5%;
 border-radius: 5px;
 padding: 10px;
@@ -317,7 +318,7 @@ background-color: var(--backgroundcaixaProjetos);
     .box-projeto3>p{
         color: var(--corDoTextoResto);
         font-size: 15px;
-        margin-top: 3rem;
+        margin-top: 2vh;
         text-align: left;
     }
 
@@ -326,6 +327,21 @@ background-color: var(--backgroundcaixaProjetos);
     display: flex;
     text-align: center;
    margin-top: 2vh;
+}
+#botaogithub{
+   border: 3px solid  rgb(10,110,253,1);
+   background-color:  rgb(10,110,253,1);
+   border-radius: 25px;
+   width: 60%;
+   padding: 8px;
+   margin-top: 3vh;
+   text-align: center;
+   display: flex;
+}
+#botaogithub>h1{
+    color: var(--corDoTextoMain);
+    font-size: 18px;
+    text-align: center;
 }
 .linguagemhtml{
     padding: 5px;
@@ -341,6 +357,13 @@ background-color: var(--backgroundcaixaProjetos);
     border-radius: 20px;
     color: white;
 }
+#logogithub{
+    width: 25%;
+    height: 5vh;
+    object-fit: cover;
+    margin-left: 10%;
+}
+
 @media (max-width:700px){
     .box-me{
         flex-direction: column;
