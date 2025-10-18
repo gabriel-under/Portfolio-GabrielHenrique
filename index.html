@@ -9,12 +9,41 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
  <header class="cabecalho">
+  <div class="menu">
+    <svg id="iconemenu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="17" height="17" viewBox="0 0 17 17">
+<g>
+</g>
+	<path d="M16 3v2h-15v-2h15zM1 10h15v-2h-15v2zM1 15h15v-2h-15v2z" fill="#000000"/>
+</svg>
+<input id="caixa" type="checkbox">
+
+<aside class="barralateral">
+      
+       <svg onclick="botaoFechar()" id="iconclosed" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="17" height="17" viewBox="0 0 17 17">
+        <g>
+        </g>
+	<path d="M9.207 8.5l6.646 6.646-0.707 0.707-6.646-6.646-6.646 6.646-0.707-0.707 6.646-6.646-6.647-6.646 0.707-0.707 6.647 6.646 6.646-6.646 0.707 0.707-6.646 6.646z" fill="#000000"/>
+    </svg>
+     <a href="#sobremim">SOBRE MIM</a>
+     <a href="#projetos">PROJETOS</a>
+     <a href="#contato">CONTATO</a>
+     <a href="#habilidades">HABILIDADES</a>
+
+     <a href="https://github.com/gabriel-under" class="link-portfolio-menulateral">
+     <span class="bolinha"></span>
+    <p>Portfólio</p>
+      </a>
+  
+</aside>
+  </div>
+ 
     <div class="links">
-        <a href="">SOBRE MIM</a>
-        <a href="">PROJETOS</a>
-        <a href="">CONTATO</a>
-        <a href="">HABILIDADES</a>
+        <a href="#sobremim">SOBRE MIM</a>
+        <a href="#projetos">PROJETOS</a>
+        <a href="#contato">CONTATO</a>
+        <a href="#habilidades">HABILIDADES</a>
        
     </div>
 
@@ -23,35 +52,38 @@
         <a href="https://github.com/gabriel-under">
             <img id="icongithub" src="github_logo_icon_229278 1.png" alt="">
         </a>
-        <input type="checkbox" id="botao" onclick="AlterarCor()">
+        <input type="checkbox" id="botaomudar" onclick="AlterarCor()">
             <img id="iconsol" src="pngtree-vector-sun-icon-png-image_883996 1.png" alt="">
+             <img id="iconmoon" src="iconmoon.png" alt="">
         
     </div>
 
-    <div class="botaoportfolio">
-        <a href="">Meu Portfólio</a>
-    </div>
+   <a href="https://github.com/gabriel-under" class="link-portfolio">
+     <span class="bolinha"></span>
+      <p>Meu Portfólio</p>
+   </a>
+
  </header>
 
- <section class="plano-de-fundo-welcome">
+ <main class="plano-de-fundo-welcome">
   <div class="box-me">
     <img src="imgme1.jpg" alt="" id="eu1">
     <h1 id="texto-apresentacao">Seja Bem Vindo ao meu site, Prazer em te conhecer! </h1>
    
   </div>
- </section>
-
- <section class="box-about-me">
+</main>
+<!--SOBRE MIM -->
+ <section class="box-about-me" id="sobremim">
      <h1>SOBRE MIM</h1>
      <img id="barraazul" src="barraazul.png" alt="">
 
      <div class="information-about-me">
          <img src="imgme2.jpg" alt="" id="eu2">
-         <h1>Eu me chamo Gabriel Henrique, tenho 16 anos e atualmente estou no 2° ano do ensino médio no colégio técnico COTEMIG. Pretendo seguir na área de programação e me tornar um ótimo profissional no meu trabalho. Com esforço e dedicação sei que poderei alcançar os meus objetivos.  </h1>
+         <p>Eu me chamo Gabriel Henrique, tenho 16 anos e atualmente estou no 2° ano do ensino médio no colégio técnico COTEMIG. Pretendo seguir na área de programação e me tornar um ótimo profissional no meu trabalho. Com esforço e dedicação sei que poderei alcançar os meus objetivos.  </p>
      </div>
  </section>
-
- <section class="plano-de-fundo-projetos">
+ <!--PROJETOS-->
+ <section class="plano-de-fundo-projetos" id="projetos">
     <h1>Projetos</h1>
 
     <div class="fileira-projetos">
@@ -66,9 +98,13 @@
         
         </div>
         
-        <a id="botaogithub" href="">
-            <h1>Ver no Github</h1>
-            <img id="logogithub" src="github_logo_icon_229278 1.png" alt="">
+        <a id="botaogithub" href="https://github.com/gabriel-under/E-commerce-InnovaTech.git">
+
+            <h1>GitHub</h1>
+            <svg id="logogithub" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 30 30" fil="c0dcff">
+           <path d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051 c-0.487,0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526 c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769 c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098 c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9 c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,0.731,0.381,2.656,0.102,3.594 c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734 c0,0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z"></path>
+           </svg>
+            
         </a>
     </div>
 
@@ -84,6 +120,15 @@
         <div class="linguagemcss">CSS</div>
         
         </div> 
+
+          <a id="botaogithub" href="https://github.com/gabriel-under/Tulen-Photography.git">
+
+            <h1>GitHub</h1>
+            <svg id="logogithub" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 30 30" fil="c0dcff">
+           <path d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051 c-0.487,0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526 c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769 c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098 c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9 c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,0.731,0.381,2.656,0.102,3.594 c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734 c0,0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z"></path>
+           </svg>
+            
+        </a>
     </div>
 
     <div class="box-projeto3">
@@ -96,12 +141,120 @@
         <div class="linguagemcss">CSS</div>
         
         </div> 
+          <a id="botaogithub" href="https://github.com/gabriel-under/Site-Belara.git">
+
+            <h1>GitHub</h1>
+            <svg id="logogithub" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"  viewBox="0 0 30 30" fil="c0dcff">
+           <path d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051 c-0.487,0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526 c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769 c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098 c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9 c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,0.731,0.381,2.656,0.102,3.594 c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734 c0,0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z"></path>
+           </svg>
+            
+        </a>
     </div>      
 
     </div>
     
  </section>
 
- <script src="script.js"></script>
+ <section class="Aba-habilidades" id="habilidades">
+  <h1>Habilidades</h1>
+
+  <div class="fileira-habilidades">
+    <div class="habilidade1">
+         <img src="iconhtml.png" alt="">
+         <h1>HTML</h1>
+    </div>
+    <div class="habilidade2">
+         <img src="iconcss.png" alt="">
+         <h1>CSS</h1>
+    </div>
+    <div class="habilidade3">
+         <img src="iconjavascript.png" alt="">
+         <h1>JavaScript</h1>
+    </div>
+    <div class="habilidade4">
+         <img src="iconcsharp.png" alt="">
+         <h1>C#</h1>
+    </div>
+    <div class="habilidade5">
+         <img id="iconfigma" src="iconfigma.png" alt="">
+         <h1>Figma</h1>
+    </div>
+    <div class="habilidade6">
+      <img src="icongit.png" alt="">
+      <h1>Git</h1>
+    </div>
+  </div>
+ </section> 
+
+
+ <section class="plano-de-fundo-contato" id="contato">
+  <h1>ENTRE EM CONTATO</h1>
+  <div class="caixas-de-formulario">
+    
+     <div class="caixa-de-formulario1">
+      <h1>Formulario</h1>
+    <form>
+    <div class="alinhar-2input">
+      
+      <input placeholder="Nome:" id="camponome" type="text" required>
+      <input placeholder="Email:" id="campoemail" type="email" required>
+      
+    </div>
+
+    <input placeholder="Telefone:" id="campotelefone" type="tel" required>
+    <textarea placeholder="Mensagem:" id="campomensagem"></textarea>
+    <button class="botao" type="submit">
+      <p>Enviar</p>
+      <img id="iconsms" src="iconsms.png" alt="">
+    </button>
+    </div>
+  </form>
+    
+  <div class=caixa-de-formulario2>
+     <h1>Redes de Contato</h1>
+      <div class="alinharemail">
+        <img src="iconemail.png" alt="">
+        <p>gabriellhenrique1054@gmail.com</p>
+      </div>
+       
+      <div class="alinhartelefone">
+        <img src="icontelefone.png" alt="">
+        <p>31971467092</p>
+      </div>
+       
+       <div class="alinhargithub">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 30 30" fil="c0dcff">
+           <path d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051 c-0.487,0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526 c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769 c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098 c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9 c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,0.731,0.381,2.656,0.102,3.594 c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734 c0,0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z"></path>
+           </svg>
+        <p>github.com/gabriel-under</p>
+      </div>
+     
+  </div>
+   </div>
+
+ </section>
+
+
+ <footer class="rodape">
+  <div class="linha1rodape">
+    <img src="iconcopyright.png" alt="">
+    <p>2025 Gabriel Henrique Martins de Brito. Todos os direitos Reservados</p>
+  </div>
+
+  <div class="linha2rodape">
+      <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 30 30" fil="c0dcff">
+           <path d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051 c-0.487,0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526 c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769 c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098 c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9 c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,0.731,0.381,2.656,0.102,3.594 c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734 c0,0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z"></path>
+           </svg>
+     <p>github.com/gabriel-under</p>
+  </div>
+  <div class="linha3rodape">
+    <h1>Telefone:</h1>
+    <p>31971467018</p>
+  </div>
+ </footer>
+
+ <script src="script.js">
+
+ </script>
 </body>
 </html>

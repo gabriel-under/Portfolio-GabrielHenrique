@@ -7,7 +7,9 @@
     box-sizing: border-box;
      transition: background-color 1s, color 0.1s;
      text-decoration: none;
+     
 }
+
 :root{
     --backgroundDoSite: #FFFFFF;
     --corCabecalho: #262626;
@@ -17,7 +19,13 @@
      --corDoTextoResto: #000000;
     --backgroundAboutMe: #e7e7ff;
     --backgroundProjetos: #BDC7D6;
-    --backgroundcaixaProjetos: #c0dcff;
+    --backgroundcaixaProjetos: #cbe1ff;
+    --backgroundCaixaHabilidades: #c0dcff;
+    --backgroundContato: #CCCCCC;
+    --backgroundCaixaInput: #ffffff;
+    --backgroundRodape: #3C3B3B; 
+    --corBordaInput: rgb(218, 182, 182);
+    --corFundoInput: #ffffff;
     
 }
 body.darkmode{
@@ -31,7 +39,13 @@ body.darkmode{
     --corDoTextoResto: #ffffff;
     --backgroundAboutMe: #373636;
      --backgroundProjetos: #464545;
-     --backgroundcaixaProjetos: #716f6f;
+     --backgroundcaixaProjetos: #565454;
+     --backgroundCaixaHabilidades: #31353a;
+     --backgroundContato: #494848;
+     --backgroundCaixaInput: #726e6e6b;
+     --backgroundRodape: #17202a; 
+     --corBordaInput: rgb(112, 112, 112);
+     --corFundoInput: #8e8e8e6b; 
      
      transition: background-color 1s, color 0.3s;
 }
@@ -46,7 +60,105 @@ body{
     display: flex;
     text-align: center;
     top: 0;
+    z-index: 2000;
     
+}
+.menu{
+    display: flex;
+    z-index: 999;
+    display: none;
+    
+}
+#iconemenu{
+    width: 55px;
+    height: 40px;
+    position: relative;
+    top: 10px;
+}
+#caixa{
+    position: absolute;
+     width: 55px;
+    height: 40px;
+    opacity: 0;
+}
+
+#caixa:checked~.barralateral{
+ margin-left: 0;
+}
+#iconclosed{
+    width: 45px;
+    height: 30px;
+}
+.barralateral{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 1600;
+    height: auto;
+    max-width: 50%;
+    border: 1px solid black;
+    background-color: #101a25 ;
+    margin-left: -280px;
+    padding: 10px;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+    transition: 1s ease;
+    border-radius: 5px;
+
+}
+.barralateral a{
+    text-decoration: none;
+    color: var(--corDoTextoMain);
+    font-size: 15px;
+}
+.link-portfolio-menulateral {
+  display: flex;
+  
+  text-align: center; /* centraliza verticalmente bolinha + texto */
+  text-decoration: none;
+  color: black; /* muda pra cor que tu quiser */ /* ex: tamanho do texto */
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  padding: 10px;
+  height: 4vh;
+  width: 110%;
+  margin-top: 2vh;
+  transition: 1s ease;
+}
+.link-portfolio-menulateral:hover{
+    background-color: #8a8a8a;
+}
+.bolinha {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: black;
+  border-radius: 50%;
+  margin-right: 8px; /* espaço entre a bolinha e o texto */
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
+  animation: expandirBorda 2s infinite ease-in-out;
+  margin-top: 0.4vh;
+}
+.link-portfolio-menulateral p{
+    font-size: 15px;
+    margin-top: 0;
+    margin-left: 5%;
+    color: #000000;
+}
+@keyframes expandirBorda {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    transform: scale(1.5);
+    box-shadow: 0 0 0 8px rgba(0, 0, 0, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
 }
 .links{
     display: flex;
@@ -59,10 +171,11 @@ body{
 }
 .links>a{
     color: var(--corDoTextoMain);
-    margin-left: 5%;
+    margin-left: 4%;
     font-size: 15px;
     position: relative;
     margin-bottom: 0.20rem;
+    
     
 }
 .links>a::after{
@@ -94,7 +207,7 @@ body{
     align-items: center;
     margin-left: 5%;
 }
-#botao{
+#botaomudar{
     position: absolute;
     cursor: pointer;
     width: 34px;
@@ -102,6 +215,7 @@ body{
     height: 38px;
     border: 1px solid black;
     margin-left: 3%;
+   
 }
 a>#icongithub{
     display: flex;
@@ -117,20 +231,70 @@ border-radius: 5px;
 margin-bottom: 0;
 margin-left: 5%;
 }
-
-.botaoportfolio{
-    display: flex;
-    border: 1px solid black;
-    
-}
-.botaoportfolio>a{
-    color: white;
-    margin-top: 1rem;
-
+#botaomudar:checked ~ #iconsol {
+  opacity: 0;
+  visibility: hidden;
+  display: none;
 }
 
+#botaomudar:checked ~ #iconmoon {
+  opacity: 1;
+  
+  margin-left: 3%;
+}
+#iconmoon{
+height: 4vh;
+border-radius: 5px;
+margin-bottom: 0;
+margin-left: 5%;
+opacity: 0;
 
+}
 
+.link-portfolio {
+  display: flex;
+  align-items: center; /* centraliza verticalmente bolinha + texto */
+  text-decoration: none;
+  color: black; /* muda pra cor que tu quiser */ /* ex: tamanho do texto */
+  background-color: white;
+  border-radius: 20px;
+  padding: 10px;
+  height: 5vh;
+  width: 11%;
+  margin-top: 2vh;
+  transition: 1s ease;
+}
+.link-portfolio:hover{
+    background-color: #8a8a8a;
+}
+.bolinha {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: black;
+  border-radius: 50%;
+  margin-right: 8px; /* espaço entre a bolinha e o texto */
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
+  animation: expandirBorda 2s infinite ease-in-out;
+}
+.link-portfolio p{
+    font-size: 15px;
+    margin-left: 5%;
+}
+@keyframes expandirBorda {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    transform: scale(1.5);
+    box-shadow: 0 0 0 8px rgba(0, 0, 0, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
 
 
 
@@ -140,8 +304,8 @@ margin-left: 5%;
     text-align: center;
     background-color: var(--corFundoWelcome);
     width: 100%;
-    height: 100vh;
-    justify-content: center;
+    height: 100%;
+    
 }
 
 .box-me{
@@ -149,21 +313,23 @@ margin-left: 5%;
     text-align: center;
     width: 70%;
     height: 40vh;
-    justify-content: center;
     margin-top: 25vh;
     padding: 20px;
-    
-    
+    margin-left: 15%;
+
     
 }
 #eu1{
     max-width: 50%;
     height: 30vh;
- border-radius: 50% !important;
+    border-radius: 50%;
    margin-top: 2rem;
   object-fit: cover;
   transition: 1s ease;
-  animation: flutuar 4s ease-in-out infinite; 
+  animation: flutuar 4s ease-in-out infinite;
+  z-index: 500;
+ 
+  
 }
 @keyframes flutuar {
   0% {
@@ -191,7 +357,6 @@ margin-left: 5%;
     flex-direction: column;
     margin-left: 22%;
     width: 55%;
-    height: 55vh;
     background-color: var(--backgroundAboutMe);
     margin-top: 10vh;
     border-radius: 10px;
@@ -213,18 +378,20 @@ margin-left: 5%;
     display: flex;
     text-align: center;
 }
-.information-about-me>h1{
+.information-about-me>p{
     color: var(--corDoTextoResto);
     margin-top: 2rem;
     font-size: 22px;
     margin-left: 7%;
+    padding: 10px;
+    font-weight: 600;
 }
 #eu2{
-    max-width: 50%;
+    width: 90%;
     height: 30vh;
     border-radius: 5px;
    margin-top: 2rem;
-  object-fit: cover;
+  object-fit: contain;
   
 }
 .plano-de-fundo-projetos{
@@ -233,12 +400,13 @@ margin-left: 5%;
     flex-direction: column;
     margin-top: 5vh;
     width: 100%;
-    height: 100vh;
-    padding: 15px;
+    padding: 20px;
 }
 .plano-de-fundo-projetos>h1{
     color: var(--corDoTextoResto);
     margin-top: 2rem;
+    font-size: 30px;
+
 }
 .fileira-projetos{
     background-color: var(--backgroundProjetos);
@@ -247,7 +415,7 @@ margin-left: 5%;
     align-items: center;
     justify-content: center;
     width: 70%;
-    height: 55vh;
+    
     margin-top: 3vh;
      margin-left: 15%;
      padding: 20px;
@@ -259,7 +427,7 @@ margin-left: 5%;
 display: flex;
 flex-direction: column;
 width: 30%;
-height: 32vh;
+height: 35vh;
 margin-left: 1%;
 padding: 10px;
  border-radius: 5px;
@@ -281,7 +449,7 @@ display: flex;
 flex-direction: column;
 flex-direction: column;
 width: 30%;
-height: 32vh;
+height: 35vh;
 margin-left: 5%;
 border-radius: 5px;
 padding: 10px;
@@ -302,9 +470,8 @@ background-color: var(--backgroundcaixaProjetos);
 .box-projeto3{
 display: flex;
 flex-direction: column;
-flex-direction: column;
 width: 30%;
-height: 32vh;
+height: 35vh;
 margin-left: 5%;
 border-radius: 5px;
 padding: 10px;
@@ -331,17 +498,19 @@ background-color: var(--backgroundcaixaProjetos);
 #botaogithub{
    border: 3px solid  rgb(10,110,253,1);
    background-color:  rgb(10,110,253,1);
-   border-radius: 25px;
-   width: 60%;
-   padding: 8px;
+   border-radius: 20px;
+   width: 50%;
+   padding: 0px;
    margin-top: 3vh;
    text-align: center;
    display: flex;
+   align-items: center;
+   justify-content: center;
 }
 #botaogithub>h1{
     color: var(--corDoTextoMain);
-    font-size: 18px;
-    text-align: center;
+    font-size: 15px;
+    
 }
 .linguagemhtml{
     padding: 5px;
@@ -358,42 +527,562 @@ background-color: var(--backgroundcaixaProjetos);
     color: white;
 }
 #logogithub{
-    width: 25%;
+    width: 20%;
     height: 5vh;
-    object-fit: cover;
+    object-fit: contain;
     margin-left: 10%;
 }
+.Aba-habilidades{
+    display: flex;
+    flex-direction: column;
+    
+   
+    
+}
+.Aba-habilidades>h1{
+    color: var(--corDoTextoResto);
+    margin-top: 5vh;
+    font-size: 30px;
+   
+    
+   
+    
+}
+.Aba-habilidades img{
+    width: 35%;
+    height: 12vh;
+}
+/*------HABILIDADES-----*/
+.fileira-habilidades{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 2fr;
+    gap: 20px;
+    margin-top: 10vh;
+    width: 70%;
+    margin-left: 14%;
+    
+    
+}
+.fileira-habilidades img{
+    height: 10vh;
+}
+.fileira-habilidades h1{
+    color: var(--corDoTextoResto);
+    font-size: 25px;
 
-@media (max-width:700px){
-    .box-me{
-        flex-direction: column;
-         height: 70vh;
-         margin-top: 0;
-         
-        
+}
+.habilidade1{
+   
+   padding: 15px;
+   text-align: center;
+   background-color: var(--backgroundCaixaHabilidades);
 
+}
+.habilidade2{
+   
+   padding: 15px;
+   text-align: center;
+   background-color: var(--backgroundCaixaHabilidades);
+}
+.habilidade3{
+    
+   padding: 15px;
+   text-align: center;
+   background-color: var(--backgroundCaixaHabilidades);
+}
+.habilidade4{
+    
+   padding: 15px;
+   text-align: center;
+   background-color: var(--backgroundCaixaHabilidades);
+}
+.habilidade5{
+    
+   padding: 15px;
+   text-align: center;
+   background-color: var(--backgroundCaixaHabilidades);
+}
+.habilidade5>#iconfigma{
+    width: 30%;
+    height: 12vh;
+}
+.habilidade6{
+    
+   padding: 15px;
+   text-align: center;
+   background-color: var(--backgroundCaixaHabilidades);
+}
+/*--------CONTATO*------*/
+.plano-de-fundo-contato{
+    background-color: var(--backgroundContato);
+    width: 100%;
+    margin-top: 5vh;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    
+    
+}
+.plano-de-fundo-contato>h1{
+    font-size: 27px;
+    color: var(--corDoTextoResto);
+    
+}
+.caixas-de-formulario{
+    display: flex;
+    text-align: center;
+    margin-top: 10vh;
+    margin-left: 12%;
+    width: 75%;
+    
+    padding: 15px;
+    gap: 10px;
+    border-radius: 10px;
+
+}
+.caixa-de-formulario1{
+    padding: 9px;
+    background-color: var(--backgroundCaixaInput);
+    display: flex;
+    flex-direction: column;
+    
+    width: 60%;
+    
+    border-radius: 5px;
+}
+.caixa-de-formulario1 h1{
+    font-size: 20px;
+    margin-bottom: 1vh;
+    color: var(--corDoTextoResto);
+}
+.alinhar2input{
+    display: flex;
+    text-align: center;
+}
+input[type="text"] , input[type="email"]{
+    border-radius: 2px;
+}
+
+
+#camponome::placeholder{
+    color: var(--corDoTextoResto);
+}
+#campoemail::placeholder{
+    color: var(--corDoTextoResto);
+}
+#campotelefone::placeholder{
+    color: var(--corDoTextoResto);
+}
+#campotelefone{
+    color: var(--corDoTextoResto);
+}
+
+#campomensagem::placeholder{
+    color: var(--corDoTextoResto);
+}
+#camponome{
+    height: 3vh;
+    width: 55%;
+     border: 1px solid black;
+     color: var(--corDoTextoResto);
+     background-color: var(--corFundoInput);
+     border: 1px solid var(--corBordaInput);
+    
+}
+#campomensagem{
+   height: 20vh;
+   margin-top: 5vh;
+   border-radius: 5px;
+   background-color: var(--corFundoInput);;
+   color: var(--corDoTextoResto);
+   border: 1px solid var(--corBordaInput);
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+
+#campoemail{
+  height: 3vh;
+   width: 42%;
+   border: 1px solid var(--corBordaInput);
+   background-color: var(--corFundoInput);
+   
+}
+#campotelefone{
+    margin-top: 2vh;
+    height: 5vh;
+    border-radius: 2px;
+    border: 1px solid var(--corBordaInput);
+    width: 67%;
+    margin-left: 1%;
+    background-color: var(--corFundoInput);
+    
+}
+.botao{
+    padding: 7px;
+    margin-top: 3vh;
+    border-radius: 25px;
+    width: 30%;
+    border: 1px solid rgb(10,110,253,1);
+    background-color: rgb(10,110,253,1);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.botao:hover{
+  background-color: #3d99fc;
+}
+.botao p{
+    font-size: 16px;
+    
+}
+.botao>#iconsms{
+    height: 4vh;
+    margin-left: 10%;
+    
+}
+.caixa-de-formulario2{
+    display: flex;
+    flex-direction: column;
+     background-color: var(--backgroundCaixaInput);
+     width: 50%;
+     
+     margin-left: 5%;
+     padding: 9px;
+     border-radius: 5px;
+    
+}
+.plano-de-fundo-contato h1{
+    margin-top: 1vh;
+}
+.caixa-de-formulario2 h1{
+    font-size: 25px;
+    color: var(--corDoTextoResto);
+    margin-top: 1vh;
+}
+.caixa-de-formulario2 img{
+    height: 9vh;
+}
+.alinharemail{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin-top: 2vh;
+    
+}
+.alinharemail img{
+    margin-left: 10%;
+}
+.alinharemail p{
+    font-size: 17px;
+    color: var(--corDoTextoResto);
+   
+}
+.alinhartelefone{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: left;
+    margin-top: 3vh;
+    left: 0;
+    
+}
+.alinhartelefone p {
+    font-size: 22px;
+    color: var(--corDoTextoResto);
+    margin-left: 2%;
+   
+}
+.alinhartelefone img{
+    margin-left: 10%;
+}
+.alinhargithub{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin-top: 4vh;
+}
+.alinhargithub p{
+    font-size: 21px;
+    color: var(--corDoTextoResto);
+}
+.alinhargithub svg{
+    height: 9vh;
+    margin-left: 10%;
+}
+.rodape{
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    width: 100%;
+    background-color: var(--backgroundRodape);
+}
+.rodape p, h1{
+    color: white;
+}
+.linha1rodape{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
+}
+.linha1rodape img{
+    height: 4vh;
+}
+.linha1rodape p{
+    margin-left: 4%;
+    font-size: 18px;
+}
+
+.linha2rodape{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
+}
+.linha2rodape svg{
+    height: 6vh;
+}
+.linha2rodape p{
+    margin-left: 2%;
+    font-size: 20px;
+}
+
+.linha3rodape{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
+}
+.linha3rodape p, h1{
+    margin-left: 2%;
+    font-size: 20px;
+}
+@media screen and (max-width:555px){
+    .menu{
+        display: flex;
     }
+    .links{
+        display: none;
+    }
+    .cabecalho> .link-portfolio{
+        display: none;
+    }
+    .icons{
+        margin-left: 60%;
+    }
+    #botaomudar{
+        opacity: 0;
+        margin-left: 10%;
+    }
+    
+/*-----------WELCOME--------*/
     .plano-de-fundo-welcome{
         flex-direction: column;
+        height: auto;
+        
+    }
+    .box-me{
+        flex-direction: column;
+        height: auto;
+         margin-top: 10vh;
+         
+         
     }
     #eu1{
         margin-top: 0;
-        width: 30%;
-        height: 12vh;
+        max-width: 60%;
+        height: auto;
+        margin-left: 20%;
         
         
     }
-
-    .welcome{
-        flex-direction: column;
-        height: 75vh;
-        
-    }
+    
     .box-me>#texto-apresentacao{
         flex-direction: column;
         text-align: center;
-        font-size: 20px;
+        font-size: 22px;
         margin-top: 2vh;
+        margin-left: 0;
         
     }
+    .box-about-me{
+      width: 80%;
+        
+        margin-left: 10%;
+    }
+    .box-about-me img{
+        object-fit: contain;
+    }
+    .box-about-me h1{
+        font-size: 20px;
+
+    }
+    .information-about-me{
+        flex-direction: column;
+        border-radius: 5px;
+        
+    }
+    .information-about-me p{
+        font-size: 16px;
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+    #barraazul{
+        width: 95%;
+    }
+    #eu2{
+        max-width: 40%;
+        height: auto;
+        border-radius: 5%;
+        object-fit: cover;
+        margin-left: 30%;
+        
+    }
+    .fileira-projetos{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .box-projeto1{
+        margin-left: 5%;
+    }
+    .box-projeto1, .box-projeto2, .box-projeto3{
+        width: 120%;
+        height: auto;
+    }
+    #botaogithub{
+        height: 4vh;
+        width: 37%;
+    }
+    #botaogithub h1{
+        font-size: 12px;
+    }
+    #logogithub{
+    width: 28%;
+    height: 5vh;
+    
+   
+     }
+
+    .fileira-habilidades{
+     grid-template-columns: 1fr;
+     width: 55%;
+     margin-left: 23%;
+     
+    
+    }
+    .fileira-habilidades h1{
+        font-size: 20px;
+    }
+.fileira-habilidades img{
+    height: 9vh;
+    width: 27%;
+    object-fit: contain;
+}
+.habilidade5>#iconfigma{
+    height: 6vh;
+    width: 20%;
+}
+
+.caixas-de-formulario{
+    flex-direction: column;
+    margin-top: 1vh;
+    margin-left: 7%;
+   
+}
+.caixa-de-formulario1{
+    width: 117%;
+}
+.alinhar-2input{
+    flex-direction: column;
+    display: flex;
+  
+}
+
+#campomensagem{
+    height: 10vh;
+    margin-top: 1vh;
+}
+#campoemail{
+    margin-top: 1vh;
+    width: 100%;
+}
+#campotelefone{
+    height: 3vh;
+    width: 100%;
+    margin-top: 1vh;
+    left: 0;
+    margin-left: 0;
+}
+#camponome{
+    width: 100%;
+}
+.botao{
+    width: 30%;
+    margin-top: 1vh;
+}
+.botao>p{
+    font-size: 14px;
+}
+.botao>#iconsms{
+    height: 2.5vh;
+}
+.caixa-de-formulario2{
+    width: 117%;
+    margin-left: 0;
+    
+}
+.caixa-de-formulario2 img{
+    height: 5vh;
+}
+.caixa-de-formulario2 svg{
+    height: 5vh;
+}
+.caixa-de-formulario2 p{
+    font-size: 15px;
+}
+.alinharemail img{
+    margin-left: 0;
+}
+.alinhartelefone img{
+    margin-left: 0;
+}
+.alinhargithub svg{
+    margin-left: 0;
+    
+}
+.rodape p{
+font-size: 15px;
+margin-left: 0%;
+}
+.rodape h1{
+    font-size: 17px;
+}
+
+
+.linha1rodape img{
+ height: 3vh;
+ margin-left: 2%;  
+}
+.linha1rodape p{
+    margin-top: 2vh;
+}
+
+.linha2rodape svg{
+    height: 4vh;
+    margin-left: 0;
+    
+}
+.linha3rodape p{
+    margin-top: 0.3vh;
+    margin-left: 5%;
+}
 }

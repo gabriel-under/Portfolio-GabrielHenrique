@@ -1,8 +1,39 @@
-function AlterarCor(){
-    const valorOriginal = document.body;
-    valorOriginal.classList.toggle("darkmode");
-  
+
+const checkbox = document.getElementById("botaomudar");
+const body = document.body;
+const themeKey = "theme";  // a chave onde vamos guardar
+
+// Função para aplicar tema baseado em um valor (“dark” ou “light”)
+function aplicarTema(tema) {
+  if (tema === "dark") {
+    body.classList.add("darkmode");
+    checkbox.checked = true;  // marca o checkbox
+  } else {
+    body.classList.remove("darkmode");
+    checkbox.checked = false;
+  }
 }
+
+// 1. Ao carregar a página
+document.addEventListener("DOMContentLoaded", () => {
+  const temaSalvo = localStorage.getItem(themeKey);
+  if (temaSalvo) {
+    aplicarTema(temaSalvo);
+  }
+});
+
+// 2. Ao clicar no checkbox
+
+function AlterarCor(){
+   if (checkbox.checked) {
+    aplicarTema("dark");
+    localStorage.setItem(themeKey, "dark");
+  } else {
+    aplicarTema("light");
+    localStorage.setItem(themeKey, "light");
+  }
+}
+
 //-----------////-------------//-----------
 
 document.addEventListener("DOMContentLoaded", function(){
@@ -47,3 +78,17 @@ document.addEventListener("DOMContentLoaded", function(){
   }
   Aparecer();
 })
+
+function botaoFechar() {
+  // Supondo que este checkbox interno seja o “fechar”:
+  const caixa = document.getElementById('caixa'); // seu checkbox controlador do menu
+  
+
+  // Desmarca o checkbox controlador para fechar o menu
+  if (caixa.checked) {
+    caixa.checked = false;
+  }
+
+  // Se quiser, também pode “simular” clique no fecharInput para resetar seu próprio estado, mas geralmente não precisa:
+  // fecharInput.checked = false;
+}
