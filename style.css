@@ -24,7 +24,7 @@
     --backgroundContato: #CCCCCC;
     --backgroundCaixaInput: #ffffff;
     --backgroundRodape: #3C3B3B; 
-    --corBordaInput: rgb(218, 182, 182);
+    --corBordaInput: rgb(168, 168, 168);
     --corFundoInput: #ffffff;
     
 }
@@ -114,10 +114,11 @@ body{
 }
 .link-portfolio-menulateral {
   display: flex;
-  
-  text-align: center; /* centraliza verticalmente bolinha + texto */
+  text-align: center; 
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
-  color: black; /* muda pra cor que tu quiser */ /* ex: tamanho do texto */
+  color: black; 
   background-color: rgb(255, 255, 255);
   border-radius: 20px;
   padding: 10px;
@@ -125,6 +126,7 @@ body{
   width: 110%;
   margin-top: 2vh;
   transition: 1s ease;
+  white-space: nowrap;
 }
 .link-portfolio-menulateral:hover{
     background-color: #8a8a8a;
@@ -135,16 +137,17 @@ body{
   height: 12px;
   background-color: black;
   border-radius: 50%;
-  margin-right: 8px; /* espaço entre a bolinha e o texto */
+  margin-right: 8px; 
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
   animation: expandirBorda 2s infinite ease-in-out;
-  margin-top: 0.4vh;
+  
 }
 .link-portfolio-menulateral p{
     font-size: 15px;
-    margin-top: 0;
+    
     margin-left: 5%;
     color: #000000;
+
 }
 @keyframes expandirBorda {
   0% {
@@ -202,6 +205,12 @@ body{
    
     width: 10%;
 }
+.icons img{
+        object-fit: cover;
+    }
+    a img{
+        object-fit: cover;
+    }
 .icons>a{
     display: flex;
     align-items: center;
@@ -215,6 +224,7 @@ body{
     height: 38px;
     border: 1px solid black;
     margin-left: 3%;
+    z-index: 1000;
    
 }
 a>#icongithub{
@@ -233,7 +243,7 @@ margin-left: 5%;
 }
 #botaomudar:checked ~ #iconsol {
   opacity: 0;
-  visibility: hidden;
+  visibility: visible;
   display: none;
 }
 
@@ -246,8 +256,10 @@ margin-left: 5%;
 height: 4vh;
 border-radius: 5px;
 margin-bottom: 0;
-margin-left: 5%;
+margin-left: 3%;
+position: absolute;
 opacity: 0;
+
 
 }
 
@@ -260,16 +272,18 @@ opacity: 0;
   border-radius: 20px;
   padding: 10px;
   height: 5vh;
-  width: 11%;
+  max-width: 30%;
   margin-top: 2vh;
   transition: 1s ease;
+  white-space: nowrap;
+  
 }
 .link-portfolio:hover{
     background-color: #8a8a8a;
 }
 .bolinha {
   display: inline-block;
-  width: 12px;
+  width: 18px;
   height: 12px;
   background-color: black;
   border-radius: 50%;
@@ -400,6 +414,7 @@ opacity: 0;
     flex-direction: column;
     margin-top: 5vh;
     width: 100%;
+    height: auto;
     padding: 20px;
 }
 .plano-de-fundo-projetos>h1{
@@ -415,7 +430,7 @@ opacity: 0;
     align-items: center;
     justify-content: center;
     width: 70%;
-    
+    height: auto;
     margin-top: 3vh;
      margin-left: 15%;
      padding: 20px;
@@ -566,6 +581,8 @@ background-color: var(--backgroundcaixaProjetos);
 }
 .fileira-habilidades img{
     height: 10vh;
+    max-width: 50%;
+    
 }
 .fileira-habilidades h1{
     color: var(--corDoTextoResto);
@@ -617,6 +634,7 @@ background-color: var(--backgroundcaixaProjetos);
 .plano-de-fundo-contato{
     background-color: var(--backgroundContato);
     width: 100%;
+    height: auto;
     margin-top: 5vh;
     display: flex;
     text-align: center;
@@ -633,9 +651,9 @@ background-color: var(--backgroundcaixaProjetos);
     display: flex;
     text-align: center;
     margin-top: 10vh;
-    margin-left: 12%;
-    width: 75%;
-    
+    margin-left: 0;
+    max-width: 100%; 
+    height: auto;
     padding: 15px;
     gap: 10px;
     border-radius: 10px;
@@ -646,9 +664,9 @@ background-color: var(--backgroundcaixaProjetos);
     background-color: var(--backgroundCaixaInput);
     display: flex;
     flex-direction: column;
-    
-    width: 60%;
-    
+    height: auto;
+    width: 40%;
+    margin-left: 10%;
     border-radius: 5px;
 }
 .caixa-de-formulario1 h1{
@@ -717,7 +735,7 @@ form{
     border-radius: 2px;
     border: 1px solid var(--corBordaInput);
     width: 67%;
-    margin-left: 1%;
+    
     background-color: var(--corFundoInput);
     
 }
@@ -750,8 +768,8 @@ form{
     display: flex;
     flex-direction: column;
      background-color: var(--backgroundCaixaInput);
-     width: 50%;
-     
+     width: 35%;
+     height: auto;
      margin-left: 5%;
      padding: 9px;
      border-radius: 5px;
@@ -766,7 +784,7 @@ form{
     margin-top: 1vh;
 }
 .caixa-de-formulario2 img{
-    height: 9vh;
+    height: 8vh;
 }
 .alinharemail{
     display: flex;
@@ -812,7 +830,7 @@ form{
     color: var(--corDoTextoResto);
 }
 .alinhargithub svg{
-    height: 9vh;
+    height: 8vh;
     margin-left: 10%;
 }
 .rodape{
@@ -836,22 +854,22 @@ form{
     height: 4vh;
 }
 .linha1rodape p{
-    margin-left: 4%;
+    margin-left: 2%;
     font-size: 18px;
 }
 
 .linha2rodape{
     display: flex;
     text-align: center;
-    justify-content: center;
     align-items: center;
     margin-top: 2vh;
+    margin-left: 35%;
 }
 .linha2rodape svg{
     height: 6vh;
 }
 .linha2rodape p{
-    margin-left: 2%;
+    margin-left: 1%;
     font-size: 20px;
 }
 
@@ -866,6 +884,67 @@ form{
     margin-left: 2%;
     font-size: 20px;
 }
+/*------556px a 1100px-------*/
+@media screen and (min-width:556px) and (max-width: 1100px){
+    .links{
+        margin-left: 0%;
+        height: auto;
+        
+    }
+    .icons{
+        margin-left: 35%;
+    }
+    .links>a{
+    color: var(--corDoTextoMain);
+    margin-left: 6%;
+    font-size: 0.75rem;
+    position: relative;
+    margin-bottom: 0.20rem;
+    white-space: nowrap;
+
+    }
+    #botaomudar:checked ~#iconmoon{
+       margin-left: 0;
+    }
+    
+    #iconmoon{
+        opacity: 0;
+        margin-left: 7%;
+    }
+     #botaomudar:checked ~ #iconsol{
+        opacity: 0;
+    }
+    #botaomudar:checked ~ #iconmoon{
+        margin-left: 7%;
+        opacity: 1;
+    }
+    .link-portfolio{
+        margin-left: 5%;
+        
+        
+    }
+    .bolinha{
+        width: 17px;
+    }
+    .link-portfolio p{
+        font-size: 11px;
+         white-space: nowrap;
+    }
+    
+    #botaomudar{
+        opacity: 0;
+        margin-left: 5%;
+    }
+    .fileira-habilidades{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 3fr;
+        width: 60%;
+        border: 1px solid black;
+        margin-left: 23%;
+        
+    }
+    
+}
 @media screen and (max-width:555px){
     .menu{
         display: flex;
@@ -877,11 +956,36 @@ form{
         display: none;
     }
     .icons{
-        margin-left: 60%;
+        margin-left: 55%;
     }
+    
+    
+    #botaogithub{
+        height: 4vh;
+        width: 37%;
+    }
+    #botaogithub h1{
+        font-size: 12px;
+    }
+    #logogithub{
+    width: 28%;
+    height: 5vh;
+    
+   
+     }
     #botaomudar{
+        margin-left: 10%;
+    }
+    #iconmoon{
         opacity: 0;
         margin-left: 10%;
+    }
+     #botaomudar:checked ~ #iconsol{
+        opacity: 0;
+    }
+    #botaomudar:checked ~ #iconmoon{
+        margin-left: 10%;
+        opacity: 1;
     }
     
 /*-----------WELCOME--------*/
@@ -958,19 +1062,7 @@ form{
         width: 120%;
         height: auto;
     }
-    #botaogithub{
-        height: 4vh;
-        width: 37%;
-    }
-    #botaogithub h1{
-        font-size: 12px;
-    }
-    #logogithub{
-    width: 28%;
-    height: 5vh;
     
-   
-     }
 
     .fileira-habilidades{
      grid-template-columns: 1fr;
@@ -995,11 +1087,12 @@ form{
 .caixas-de-formulario{
     flex-direction: column;
     margin-top: 1vh;
-    margin-left: 7%;
+    margin-left: 0%;
    
 }
 .caixa-de-formulario1{
-    width: 117%;
+    width: 100%;
+    margin-left: 0;
 }
 .alinhar-2input{
     flex-direction: column;
@@ -1036,9 +1129,8 @@ form{
     height: 2.5vh;
 }
 .caixa-de-formulario2{
-    width: 117%;
+    width: 100%;
     margin-left: 0;
-    
 }
 .caixa-de-formulario2 img{
     height: 5vh;
@@ -1047,7 +1139,11 @@ form{
     height: 5vh;
 }
 .caixa-de-formulario2 p{
-    font-size: 15px;
+    font-size: 0.85rem;
+    overflow-wrap: break-word;
+    word-break: break-all;  
+    white-space: normal; 
+    
 }
 .alinharemail img{
     margin-left: 0;
@@ -1059,6 +1155,7 @@ form{
     margin-left: 0;
     
 }
+
 .rodape p{
 font-size: 15px;
 margin-left: 0%;
@@ -1075,7 +1172,12 @@ margin-left: 0%;
 .linha1rodape p{
     margin-top: 2vh;
 }
-
+.linha2rodape{
+    margin-left: 3%;
+}
+.linha2rodape p{
+    margin-left: 0;
+}
 .linha2rodape svg{
     height: 4vh;
     margin-left: 0;
