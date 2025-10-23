@@ -80,6 +80,7 @@ body{
      width: 55px;
     height: 40px;
     opacity: 0;
+    margin-top: 1vh;
 }
 
 #caixa:checked~.barralateral{
@@ -131,10 +132,10 @@ body{
 .link-portfolio-menulateral:hover{
     background-color: #8a8a8a;
 }
-.bolinha {
+.bolinha-menu {
   display: inline-block;
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   background-color: black;
   border-radius: 50%;
   margin-right: 8px; 
@@ -271,7 +272,7 @@ opacity: 0;
   background-color: white;
   border-radius: 20px;
   padding: 10px;
-  height: 5vh;
+  height: 4vh;
   max-width: 30%;
   margin-top: 2vh;
   transition: 1s ease;
@@ -510,6 +511,23 @@ background-color: var(--backgroundcaixaProjetos);
     text-align: center;
    margin-top: 2vh;
 }
+#botaogithub1{
+    border: 3px solid  rgb(10,110,253,1);
+   background-color:  rgb(10,110,253,1);
+   border-radius: 20px;
+   width: 50%;
+   padding: 0px;
+   margin-top: 5vh;
+   text-align: center;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+#botaogithub1>h1{
+    color: var(--corDoTextoMain);
+    font-size: 15px;
+    
+}
 #botaogithub{
    border: 3px solid  rgb(10,110,253,1);
    background-color:  rgb(10,110,253,1);
@@ -574,8 +592,10 @@ background-color: var(--backgroundcaixaProjetos);
     grid-template-rows: 2fr;
     gap: 20px;
     margin-top: 10vh;
-    width: 70%;
+    max-width: 70%;
+    height: auto;
     margin-left: 14%;
+  
     
     
 }
@@ -897,7 +917,7 @@ form{
     .links>a{
     color: var(--corDoTextoMain);
     margin-left: 6%;
-    font-size: 0.75rem;
+    font-size: 0.90rem;
     position: relative;
     margin-bottom: 0.20rem;
     white-space: nowrap;
@@ -931,20 +951,161 @@ form{
          white-space: nowrap;
     }
     
+    
     #botaomudar{
         opacity: 0;
         margin-left: 5%;
     }
+    .plano-de-fundo-welcome{
+        height: 60vh;
+    }
+    .box-me{
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20vh;
+    }
+    #eu1{
+        height: 20vh;
+        margin-top: 0;
+    }
+    @keyframes flutuar {
+  0% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-80px); /* sobe mais */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+    .box-me>#texto-apresentacao{
+        font-size: 1.5rem;
+        margin-top: 0;
+    }
+    .box-about-me{
+        width: 100%;
+        margin-left: 0;
+    }
+    .information-about-me>p{
+        font-size: 1.2rem;
+    }
+    .plano-de-fundo-projetos{
+        height: auto;
+    }
+    .fileira-projetos{
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+        align-items: stretch;          /* garante que os filhos se estiquem na altura */
+        
+    }
+    .box-projeto1, .box-projeto2, .box-projeto3{
+        width: 75%;
+        height: 40vh;
+         flex: 1;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    #botaogithub1{
+        margin-top: 2.5vh;
+    }
+    /* dentro da caixa, suponha que o botão tenha classe .botao ou id #botaogithub */
+   #botaogithub {
+   margin-top: 1vh;             /* empurra o botão para o fim da caixa */
+    }
+
     .fileira-habilidades{
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 3fr;
-        width: 60%;
-        border: 1px solid black;
-        margin-left: 23%;
+        grid-template-rows: repeat(3, 1fr);
+        max-width: 80%;
+        height: auto;
+        
+        margin-left: 18%;
+        padding: 10px;
+        
+    }
+    .fileira-habilidades .habilidade1, .habilidade2, .habilidade3, .habilidade3, .habilidade4, .habilidade5, .habilidade6{
+     width: 60%;
+     max-height: 19vh;
+    }
+    .caixas-de-formulario{
+        
+        margin-left: 0;
+    }
+    .caixa-de-formulario1{
+        flex-direction: column;
+        height: 42vh;
+        width: 50%;
+        margin-left: 0;
         
     }
     
+    form{
+        flex-direction: column;
+    }
+    #camponome{
+     width: 100%;
+    }
+    #campoemail{
+        width: 100%;
+        margin-top: 1vh;
+    }
+    #campotelefone{
+        width: 100%;
+    }
+    #campomensagem{
+        height: 10vh;
+        margin-top: 2vh;
+    }
+    .botao{
+        width: 50%;
+        
+    }
+    .botao p{
+        font-size: 1rem;
+    }
+    .botao #iconsms{
+        height: 3vh;
+    }
+    .caixa-de-formulario2{
+        height: 42vh;
+        width: 50%;
+    }
+    
+    .alinharemail{
+        text-align: center;
+    }
+    .caixa-de-formulario2 p{
+        font-size: 0.95rem;
+         overflow-wrap: break-word;
+    word-break: break-all;  
+    white-space: normal; 
+    }
+    
+    .caixa-de-formulario2 img{
+        height: 6vh;
+        margin-left: 0;
+    }
+    .caixa-de-formulario2 svg{
+        height: 6vh;
+        margin-left: 0;
+    }
+   
+    .linha1rodape p{
+        margin-top: 3vh;
+    }
+    .linha2rodape{
+        justify-content: center;
+        margin-left: 0;
+    }
+    .linha2rodape>p{
+        margin-left: 0%;
+    }
 }
+
+
 @media screen and (max-width:555px){
     .menu{
         display: flex;
@@ -1173,14 +1334,17 @@ margin-left: 0%;
     margin-top: 2vh;
 }
 .linha2rodape{
-    margin-left: 3%;
+    margin-left: 0;
+    
+    
 }
 .linha2rodape p{
     margin-left: 0;
+   
 }
 .linha2rodape svg{
     height: 4vh;
-    margin-left: 0;
+    margin-left: 0%;
     
 }
 .linha3rodape p{

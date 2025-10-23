@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function(){
     if(digitando === true){
       
       if(indice < TextoQueAparece.length){
-        conteudoDoElemento.textContent = textoFixo + TextoQueAparece.substring(0, indice + 1);
+        conteudoDoElemento.textContent = textoFixo + TextoQueAparece.slice(0, indice + 1);
         indice++;
         setTimeout(Aparecer, tempoDigitar);
 
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function(){
     }
     else{
       if (indice>0){
-        conteudoDoElemento.textContent = textoFixo + TextoQueAparece.substring(0, indice - 1);
+        conteudoDoElemento.textContent = textoFixo + TextoQueAparece.slice(0, indice - 1);
         indice--;
         setTimeout(Aparecer, tempoApagar)
       }
@@ -94,37 +94,37 @@ function botaoFechar() {
 }
 
 
+
+
 var campo = document.getElementById("campotelefone");
 
 campo.addEventListener("input", function() {
   var valor = campo.value;
 
-  // 1) remove tudo que NÃO for número
-  var numeros = "";
-  for (var i = 0; i < valor.length; i++) {
+  var numerosLimitados = "";
+
+  for (let i = 0; i < valor.length; i++) {
     var char = valor[i];
-    if (char >= "0" && char <= "9") {
-      numeros += char;
+    if(char >= "0" && char <= "9"){
+      numerosLimitados += char;
     }
   }
-
-  // 2) limita o total de números (ex: 11 dígitos = DDD + 9 dígitos)
-  if (numeros.length > 11) {
-    numeros = numeros.slice(0, 11);
+  
+    
+  var numerosFormatados = "";
+  if(numerosLimitados.length === 0){
+   numerosFormatados = "";
   }
-
-  // 3) monta o formato
-  var formatado = "";
-  if (numeros.length <= 2) {
-    formatado = "(" + numeros;
-  } else if (numeros.length <= 7) {
-    // 2 dígitos de DDD + resto até 5 (por ex)
-    formatado = "(" + numeros.slice(0,2) + ") " + numeros.slice(2);
-  } else {
-    // 2 dígitos de DDD + 5 dígitos + resto
-    formatado = "(" + numeros.slice(0,2) + ") " + numeros.slice(2,7) + "-" + numeros.slice(7);
+  else if(numerosLimitados.length <= 2){
+    numerosFormatados = "(" + numerosLimitados.slice(0,2); 
   }
-
-  campo.value = formatado;
-});
-;
+  else if(numerosLimitados.length <= 7){
+    numerosFormatados = "(" + numerosLimitados.slice(0,2) + ") " + numerosLimitados.slice(2,7);
+  }
+  else{
+    numerosFormatados = "(" + numerosLimitados.slice(0,2) + ") " + numerosLimitados.slice(2,7) + "-" + numerosLimitados.slice(7,12);
+  }
+  campo.value = numerosFormatados;
+  
+}
+);
