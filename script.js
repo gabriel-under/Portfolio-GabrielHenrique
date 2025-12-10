@@ -1,13 +1,13 @@
 
 const checkbox = document.getElementById("botaomudar");
 const body = document.body;
-const themeKey = "theme";  // a chave onde vamos guardar
+const themeKey = "theme";  
 
-// Função para aplicar tema baseado em um valor (“dark” ou “light”)
+
 function aplicarTema(tema) {
   if (tema === "dark") {
     body.classList.add("darkmode");
-    checkbox.checked = true;  // marca o checkbox
+    checkbox.checked = true;  
   } else {
     body.classList.remove("darkmode");
     checkbox.checked = false;
@@ -80,17 +80,16 @@ document.addEventListener("DOMContentLoaded", function(){
 })
 
 function botaoFechar() {
-  // Supondo que este checkbox interno seja o “fechar”:
-  const caixa = document.getElementById('caixa'); // seu checkbox controlador do menu
+  
+  const caixa = document.getElementById('caixa'); 
   
 
-  // Desmarca o checkbox controlador para fechar o menu
+  
   if (caixa.checked) {
     caixa.checked = false;
   }
 
-  // Se quiser, também pode “simular” clique no fecharInput para resetar seu próprio estado, mas geralmente não precisa:
-  // fecharInput.checked = false;
+ 
 }
 
 

@@ -997,7 +997,7 @@ form{
         width: 100%;
         height: auto;
         margin-left: 0;
-        align-items: stretch;          /* garante que os filhos se estiquem na altura */
+        align-items: stretch;          
         
     }
     .box-projeto1, .box-projeto2, .box-projeto3{
@@ -1011,9 +1011,9 @@ form{
     #botaogithub1{
         margin-top: 2.5vh;
     }
-    /* dentro da caixa, suponha que o botão tenha classe .botao ou id #botaogithub */
+    
    #botaogithub {
-   margin-top: 1vh;             /* empurra o botão para o fim da caixa */
+   margin-top: 1vh;             
     }
 
     .fileira-habilidades{
